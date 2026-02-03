@@ -1,0 +1,137 @@
+/* Extended Auth Styles for Full Registration Form */
+
+.auth-wrapper.wide {
+    max-width: 800px;
+    /* Wider for the full form */
+}
+
+.auth-section-title {
+    color: #b4b0ff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 24px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(180, 180, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-section-title::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 16px;
+    background: #5f6eff;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #5f6eff;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4b0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Payment Box in Glass Style */
+.payment-box {
+    background: rgba(10, 12, 35, 0.6);
+    border: 1px solid rgba(180, 180, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.payment-fee {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffe48a;
+    text-shadow: 0 0 10px rgba(255, 228, 138, 0.4);
+    margin-bottom: 12px;
+}
+
+.payment-qr-container {
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 8px;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-qr-placeholder {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* File Input Syle */
+.auth-file-input {
+    padding: 8px;
+    font-size: 12px;
+    background: rgba(10, 12, 40, 0.6);
+}
+
+.auth-file-input::file-selector-button {
+    margin-right: 12px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(46, 79, 179, 0.6);
+    border: 1px solid rgba(180, 180, 255, 0.4);
+    color: #e9ecff;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.auth-file-input::file-selector-button:hover {
+    background: rgba(46, 79, 179, 0.9);
+    border-color: #b4b0ff;
+}
+
+.terms-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #c5c9ff;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.terms-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #5f6eff;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

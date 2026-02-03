@@ -34,21 +34,16 @@ const Navbar = () => {
         <li>
           <NavLink to="/accomodation" onClick={closeMenu}>Accommodation</NavLink>
         </li>
-        <li>
-          <NavLink to="/events" onClick={closeMenu}>Events</NavLink>
-        </li>
+
         <li>
           <NavLink to="/workshops" onClick={closeMenu}>Workshops</NavLink>
         </li>
         <li>
           <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
         </li>
-        
+
         {/* Mobile Actions (inside menu for mobile) */}
         <div className="nav-actions-mobile">
-           <button className="neo-btn" onClick={closeMenu}>
-            <NavLink to="/login">Login</NavLink>
-          </button>
           <button className="neo-btn" onClick={closeMenu}>
             <NavLink to="/register">Register</NavLink>
           </button>
@@ -57,9 +52,6 @@ const Navbar = () => {
 
       {/* Desktop Actions (hidden on mobile) */}
       <div className="nav-actions desktop-only">
-        <button className="neo-btn">
-          <NavLink to="/login">Login</NavLink>
-        </button>
         <button className="neo-btn">
           <NavLink to="/register">Register</NavLink>
         </button>

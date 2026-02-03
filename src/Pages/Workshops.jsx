@@ -1,11 +1,34 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/gallery.css";
 import "../styles/events.css";
 import bgVideo from "../assets/bgpursuit.webm";
-import Poster from "../assets/Events/event1.png";
+
+// Importing Event Images
+import Junoon from "../assets/Events/Junnon.png";
+import GenAI from "../assets/Events/genAI.png";
+import AIML from "../assets/Events/aiml.png";
+import Latex from "../assets/Events/latex_code.png";
+import VideoEditing from "../assets/Events/Video_Editing.png";
+import CloudByte from "../assets/Events/Cloudbyte.png";
+import EV from "../assets/Events/ev.png";
 
 const Workshops = () => {
-  const Workshops = Array.from({ length: 6 });
-  const duplicatedworkshops = [...Workshops];
+  const navigate = useNavigate();
+
+  const workshopList = [
+    { name: "Junoon", image: Junoon },
+    { name: "Generative AI", image: GenAI },
+    { name: "AIML", image: AIML },
+    { name: "Mastering LaTeX", image: Latex },
+    { name: "Video Editing", image: VideoEditing },
+    { name: "Cloud Byte", image: CloudByte },
+    { name: "Electric Vehicle", image: EV },
+    { name: "AIML Bootcamp", image: AIML },
+  ];
+
+  const handleWorkshopClick = (workshopName) => {
+    navigate("/register", { state: { workshop: workshopName } });
+  };
 
   return (
     <section className="gallery-section">
@@ -22,21 +45,17 @@ const Workshops = () => {
         <span className="gallery-title-text">Workshops</span>
       </div>
 
-      <div className="events-row-wrapper">
-        <div className="events-row events-row-left">
-          {duplicatedworkshops.map((_, index) => (
-            <div className="event-card" key={`left-${index}`}>
-              <img src={Poster} alt="Event" className="event-poster" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="events-row-wrapper">
-        <div className="events-row events-row-right">
-          {duplicatedworkshops.map((_, index) => (
-            <div className="event-card" key={`right-${index}`}>
-              <img src={Poster} alt="Event" className="event-poster" />
+      <div className="workshops-container">
+        <div className="workshops-grid">
+          {workshopList.map((workshop, index) => (
+            <div
+              className="event-card"
+              key={index}
+              onClick={() => handleWorkshopClick(workshop.name)}
+              style={{ cursor: "pointer" }}
+            >
+              <img src={workshop.image} alt={workshop.name} className="event-poster" />
+              <button className="register-btn">Register Now</button>
             </div>
           ))}
         </div>

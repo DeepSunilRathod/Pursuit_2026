@@ -7,7 +7,7 @@ import Loader from "./Components/Loader";
 import Home from "./Pages/Home";
 import Gallery from "./Pages/Gallery";
 import Accomodation from "./Pages/Accomodation";
-import Events from "./Pages/Events";
+
 import Workshops from "./Pages/Workshops";
 import Speakers from "./Pages/Speakers";
 import Sponsers from "./Pages/Sponsers";
@@ -37,7 +37,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/accomodation" element={<Accomodation />} />
-              <Route path="/events" element={<Events />} />
+
               <Route path="/workshops" element={<Workshops />} />
               <Route path="/speakers" element={<Speakers />} />
               <Route path="/sponser" element={<Sponsers />} />
