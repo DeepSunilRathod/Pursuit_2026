@@ -3,27 +3,24 @@ import "../styles/gallery.css";
 import "../styles/events.css";
 import bgVideo from "../assets/bgpursuit.webm";
 
-// Importing Event Images
-import Junoon from "../assets/Events/Junnon.png";
-import GenAI from "../assets/Events/genAI.png";
-import AIML from "../assets/Events/aiml.png";
-import Latex from "../assets/Events/latex_code.png";
-import VideoEditing from "../assets/Events/Video_Editing.png";
-import CloudByte from "../assets/Events/Cloudbyte.png";
-import EV from "../assets/Events/ev.png";
+// Importing New Event Images
+import AI from "../assets/Events/AI.png";
+import AIML from "../assets/Events/AIML copy.png";
+import Cloud from "../assets/Events/CLOUD.png";
+import Cyber from "../assets/Events/CYBER.png";
+import Latex from "../assets/Events/LATEX.png";
+import VLSI from "../assets/Events/VLSI.png";
 
 const Workshops = () => {
   const navigate = useNavigate();
 
   const workshopList = [
-    { name: "Junoon", image: Junoon },
-    { name: "Generative AI", image: GenAI },
-    { name: "AIML", image: AIML },
-    { name: "Mastering LaTeX: Type Smart, Not Hard", image: Latex },
-    { name: "Video Editing", image: VideoEditing },
-    { name: "Cloud Byte", image: CloudByte },
-    { name: "Electric Vehicle", image: EV },
-    { name: "AIML Bootcamp", image: AIML },
+    { name: "Cloud Byte", image: Cloud, fee: "₹ 49" },
+    { name: "Mastering LaTeX:Type Smart, Not Hard", image: Latex, fee: "Free" },
+    { name: "AI/ML Bootcamp", image: AIML, fee: "₹ 100" },
+    { name: "Introduction to VLSI and Its Applications", image: VLSI, fee: "₹ 100" },
+    { name: "Introduction to Agentic Ai", image: AI, fee: "₹ 100" },
+    { name: "Cybersecurity Workshop", image: Cyber, fee: "₹ 50" },
   ];
 
   const handleWorkshopClick = (workshopName) => {
@@ -55,6 +52,7 @@ const Workshops = () => {
               style={{ cursor: "pointer" }}
             >
               <img src={workshop.image} alt={workshop.name} className="event-poster" />
+              <div className="event-fee">{workshop.fee}</div>
               <button className="register-btn">Register Now</button>
             </div>
           ))}

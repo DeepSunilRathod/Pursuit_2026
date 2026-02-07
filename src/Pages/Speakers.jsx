@@ -1,15 +1,23 @@
 import "../styles/gallery.css";
 import "../styles/speakers.css";
 import bgVideo from "../assets/bgpursuit.webm";
-import SpeakerImg from "../assets/pursuitlogo.png";
+import PlaceholderImg from "../assets/pursuitlogo.png";
+
+// Importing Speaker Images
+import AmitMolke from "../assets/speakers/Amit Molke.jpeg";
+import DrRSMahamune from "../assets/speakers/Dr.R.S.Mahamune.jpeg";
+import YogeshMurumkar from "../assets/speakers/Mr. Yogesh P Murumkar.jpg";
+import NakulDeshmukh from "../assets/speakers/Nakul Deshmukh.png";
+import RiyaDangra from "../assets/speakers/Riya Dangra.jpeg";
+import PranavKheldar from "../assets/speakers/Pranav Kheldar.jpg";
 
 const speakers = [
-  { name: "Dr. A. Visionary", title: "AI Strategist, Futurist" },
-  { name: "Riya Patel", title: "Lead Developer, Quantum Labs" },
-  { name: "Karan Mehta", title: "Cybersecurity Architect" },
-  { name: "Sara Thomas", title: "Product Lead, Cloud Systems" },
-  { name: "Arjun Nair", title: "Robotics & Automation Expert" },
-  { name: "Neha Sharma", title: "Data Scientist, InnovateX" },
+  { name: "Mr. Yogesh P Murumkar", title: "CEO & Corporate Trainer, Bharat Software Solutions", image: YogeshMurumkar },
+  { name: "Mr. Nakul Deshmukh", title: "Founder iBase Electrosoft LLP", image: NakulDeshmukh },
+  { name: "Mr. Amit Molke", title: "SAP Associate in Bristlecone", image: AmitMolke },
+  { name: "Miss. Riya Dangra", title: "Software engineer in apexa iQ", image: RiyaDangra },
+  { name: "Mr. Pranav Kheldar", title: "Alumni of SSGMCE", image: PranavKheldar },
+  { name: "Dr. R.S. Mahamune", title: "Faculty SSGMCE", image: DrRSMahamune },
 ];
 
 const Speakers = () => {
@@ -33,10 +41,10 @@ const Speakers = () => {
           leaders shaping the future.
         </p>
         <div className="speakers-grid">
-          {speakers.map((speaker) => (
-            <article key={speaker.name} className="speaker-card">
+          {speakers.map((speaker, index) => (
+            <article key={index} className="speaker-card">
               <div className="speaker-avatar">
-                <img src={SpeakerImg} alt={speaker.name} />
+                <img src={speaker.image} alt={speaker.name} />
               </div>
               <h3 className="speaker-name">{speaker.name}</h3>
               <p className="speaker-title">{speaker.title}</p>

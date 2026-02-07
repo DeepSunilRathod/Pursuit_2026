@@ -134,4 +134,18 @@
     .form-row {
         grid-template-columns: 1fr;
     }
+
+    .payment-box {
+        padding: 16px;
+    }
+
+    .payment-qr-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Ensure spacing from back button on mobile */
+    .auth-wrapper.wide {
+        margin-top: 20px;
+    }
 }

@@ -95,13 +95,23 @@
 .workshops-grid .event-card {
   width: 100%;
   aspect-ratio: 2 / 3;
-  /* Enforce vertical rectangle uniformity */
-  max-width: 220px;
-  /* Reduced from 320px to fit 2 rows vertically */
+  max-width: 260px;
+  /* Slight increase to match original feel if needed */
   height: auto;
-  /* Let aspect-ratio drive height */
   overflow: hidden;
-  /* Ensure image doesn't overflow */
+  border-radius: 12px;
+  position: relative;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  display: block;
+  /* Revert flex */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.workshops-grid .event-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 26px rgba(140, 160, 255, 0.6);
 }
 
 .workshops-grid .event-poster {
@@ -109,11 +119,37 @@
   height: 100%;
   object-fit: contain;
   object-position: top;
-  /* Align image to top to leave space at bottom if needed */
   display: block;
+  border-radius: 0;
+  /* Let card radius handle it */
+  border: none;
+  transition: transform 0.35s ease;
+}
+
+.workshops-grid .event-card:hover .event-poster {
+  transform: scale(1.1);
+  /* Zoom effect inside card */
+  box-shadow: none;
+}
+
+/* Event Fee Styles - Overlay */
+.event-fee {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c5c9ff;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .register-btn {
+  /* Default absolute - kept for other usages if any */
   position: absolute;
   bottom: 12px;
   left: 50%;
@@ -139,11 +175,30 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Specific Override for Workshops Grid */
+/* REMOVED static overrides to restore absolute positioning */
+/*
+.workshops-grid .register-btn {
+  position: static;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-top: 0;
+  width: auto;
+  min-width: 140px;
+}
+*/
+
 .event-card:hover .register-btn {
-  /* On hover, slightly lift and glow brighter */
+  /* Default hover */
   transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 0 15px rgba(111, 76, 255, 0.6);
   background: linear-gradient(135deg, #8b6cff, #b39cff);
+}
+
+.workshops-grid .event-card:hover .register-btn {
+  /* Standard hover for absolute button */
+  transform: translateX(-50%) translateY(-2px);
 }
 
 
@@ -198,12 +253,27 @@
 
 @media (max-width: 480px) {
   .events-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .workshops-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
+    /* 1 Column for mobile devices */
+    gap: 24px;
+    padding-bottom: 40px;
+  }
+
+  .workshops-grid .event-card {
+    max-width: 320px;
+    /* Allow cards to be wider in single column */
+    margin: 0 auto;
+  }
+
+  /* Smaller fee text on mobile */
+  .event-fee {
+    font-size: 0.85rem;
+    top: 8px;
+    right: 8px;
   }
 }

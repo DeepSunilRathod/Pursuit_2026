@@ -4,10 +4,14 @@ import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import emailjs from "@emailjs/browser"; // Top-level import
 import "../styles/auth.css";
+import "../styles/events.css"; // Ensure gallery styles are loaded
 import "../styles/register-full.css"; // New extended styles
 import bgVideo from "../assets/bgpursuit.webm";
 
 // --- ASSET IMPORTS ---
+import Qr100 from "../assets/qr/100.jpeg";
+import Qr49 from "../assets/qr/49.png";
+import Qr50 from "../assets/qr/50.jpeg";
 const placeholderQr = null;
 // ---------------------
 
@@ -35,48 +39,43 @@ const Register = () => {
     }
   };
 
+  // Helper to check if payment is required
+  const isPaymentRequired = (fee) => {
+    return fee && fee !== "Free" && fee !== "₹ 0";
+  };
+
   // Define configuration for EACH workshop.
   // Keys must match the values in your "Select Workshop" dropdown exactly.
   const WORKSHOP_FORMS = {
-    "Junoon": {
+    "Mastering LaTeX:Type Smart, Not Hard": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 149",
+      fee: "Free",
       qrCode: placeholderQr,
     },
-    "Generative AI": {
+    "AI/ML Bootcamp": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 199",
-      qrCode: placeholderQr,
+      fee: "₹ 100",
+      qrCode: Qr100, // Updated
     },
-    "AIML": {
+    "Introduction to VLSI and Its Applications": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 149",
-      qrCode: placeholderQr,
+      fee: "₹ 100",
+      qrCode: Qr100, // Updated
     },
-    "Mastering LaTeX: Type Smart, Not Hard": {
+    "Introduction to Agentic Ai": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 99",
-      qrCode: placeholderQr,
+      fee: "₹ 100",
+      qrCode: Qr100, // Updated
     },
-    "Video Editing": {
+    "Cybersecurity Workshop": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 149",
-      qrCode: placeholderQr,
+      fee: "₹ 50",
+      qrCode: Qr50, // Updated
     },
     "Cloud Byte": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 149",
-      qrCode: placeholderQr,
-    },
-    "Electric Vehicle": {
-      ...COMMON_FORM_CONFIG,
-      fee: "₹ 249",
-      qrCode: placeholderQr,
-    },
-    "AIML Bootcamp": {
-      ...COMMON_FORM_CONFIG,
-      fee: "₹ 499",
-      qrCode: placeholderQr,
+      fee: "₹ 49",
+      qrCode: Qr49, // Updated
     },
     // Fallback/Default if needed
     "DEFAULT": {
@@ -177,31 +176,29 @@ const Register = () => {
     const fids = config.fields;
     const formPayload = new URLSearchParams();
 
-    // Map Workshop Names to Google Form Options (EXACT MATCH REQUIRED)
-    // Based on your screenshot:
-    const workshopMapping = {
-      "Junoon": "JUNNON", // Matches typo in Google Form screenshot
-      "Generative AI": "GENERATIVE AI",
-      "AIML": "AIML",
-      "Mastering LaTeX: Type Smart, Not Hard": "MASTERING LaTeX: Type Smart, Not Hard",
-      "Video Editing": "VIDEO EDITING",
-      "Cloud Byte": "CLOUD BYTE",
-      "Electric Vehicle": "ELECTRIC VEHICLE",
-      "AIML Bootcamp": "AIML BOOTCAMP"
-    };
-
-    const googleFormWorkshopValue = workshopMapping[formData.workshop] || formData.workshop.toUpperCase();
+    // Use exact workshop name from dropdown to minimize mismatch risk
+    const googleFormWorkshopValue = formData.workshop;
 
     if (fids) {
       if (fids.NAME) formPayload.append(fids.NAME, formData.name);
       if (fids.EMAIL) formPayload.append(fids.EMAIL, formData.email);
       if (fids.PHONE) formPayload.append(fids.PHONE, formData.phone);
       if (fids.BRANCH) formPayload.append(fids.BRANCH, formData.branch);
-      if (fids.YEAR) formPayload.append(fids.YEAR, formData.year); // Ensure select options match "1ST YEAR" etc.
+      if (fids.YEAR) formPayload.append(fids.YEAR, formData.year);
       if (fids.COLLEGE) formPayload.append(fids.COLLEGE, formData.college);
       if (fids.TYPE) formPayload.append(fids.TYPE, formData.type);
       if (fids.WORKSHOP) formPayload.append(fids.WORKSHOP, googleFormWorkshopValue);
-      if (fids.UTR) formPayload.append(fids.UTR, formData.utr);
+      // Only append UTR if payment is required
+      if (fids.UTR) {
+        // Send "0" for free events to bypass number validation
+        formPayload.append(fids.UTR, isPaymentRequired(currentFee) ? formData.utr : "0");
+      }
+    }
+
+    // Debugging: Log payload to console
+    console.log("Submitting to:", submitUrl);
+    for (const [key, value] of formPayload.entries()) {
+      console.log(`${key}: ${value}`);
     }
 
     // Use fetch with no-cors mode to bypass CORS policies
@@ -352,48 +349,49 @@ const Register = () => {
                   required
                 >
                   <option value="">Select Option</option>
-                  <option value="Junoon">Junoon</option>
-                  <option value="Generative AI">Generative AI</option>
-                  <option value="AIML">AIML</option>
-                  <option value="Mastering LaTeX: Type Smart, Not Hard">Mastering LaTeX: Type Smart, Not Hard</option>
-                  <option value="Video Editing">Video Editing</option>
+                  <option value="Mastering LaTeX:Type Smart, Not Hard">Mastering LaTeX:Type Smart, Not Hard</option>
+                  <option value="AI/ML Bootcamp">AI/ML Bootcamp</option>
+                  <option value="Introduction to VLSI and Its Applications">Introduction to VLSI and Its Applications</option>
+                  <option value="Introduction to Agentic Ai">Introduction to Agentic Ai</option>
+                  <option value="Cybersecurity Workshop">Cybersecurity Workshop</option>
                   <option value="Cloud Byte">Cloud Byte</option>
-                  <option value="Electric Vehicle">Electric Vehicle</option>
-                  <option value="AIML Bootcamp">AIML Bootcamp</option>
                 </select>
               </div>
             </div>
 
-            {/* PAYMENT */}
-            <div className="auth-section-title">Payment Details</div>
+            {/* PAYMENT - Conditionally Rendered */}
+            {isPaymentRequired(currentFee) && (
+              <>
+                <div className="auth-section-title">Payment Details</div>
 
-            <div className="payment-box">
-              <div className="payment-fee">Fee: {currentFee}</div>
-              <div className="payment-qr-container">
-                {currentQr ? (
-                  <img src={currentQr} alt="QR Code" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                ) : (
-                  <div className="payment-qr-placeholder">QR Code Not Available</div>
-                )}
-              </div>
-              <p style={{ color: '#c5c9ff', fontSize: '12px', marginTop: '8px' }}>Scan to Pay</p>
-            </div>
+                <div className="payment-box">
+                  <div className="payment-fee">Fee: {currentFee}</div>
+                  <div className="payment-qr-container">
+                    {currentQr ? (
+                      <img src={currentQr} alt="QR Code" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    ) : (
+                      <div className="payment-qr-placeholder">QR Code Not Available</div>
+                    )}
+                  </div>
+                  <p style={{ color: '#c5c9ff', fontSize: '12px', marginTop: '8px' }}>Scan to Pay</p>
+                </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label className="auth-label">UTR Number</label>
-                <input
-                  type="text"
-                  name="utr"
-                  className="auth-input"
-                  placeholder="Transaction ID"
-                  value={formData.utr}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-            </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="auth-label">UTR Number</label>
+                    <input
+                      type="text"
+                      name="utr"
+                      className="auth-input"
+                      placeholder="Transaction ID"
+                      value={formData.utr}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+              </>
+            )}
 
             <label className="terms-label">
               <input type="checkbox" className="terms-checkbox" required />
