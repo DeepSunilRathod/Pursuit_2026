@@ -10,6 +10,7 @@ import Cloud from "../assets/Events/CLOUD.png";
 import Cyber from "../assets/Events/CYBER.png";
 import Latex from "../assets/Events/LATEX.png";
 import VLSI from "../assets/Events/VLSI.png";
+import EV from "../assets/Events/EV.png";
 
 const Workshops = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Workshops = () => {
     { name: "AI/ML Bootcamp", image: AIML, fee: "₹ 100" },
     { name: "Introduction to VLSI and Its Applications", image: VLSI, fee: "₹ 100" },
     { name: "Introduction to Agentic Ai", image: AI, fee: "₹ 100" },
+    { name: "Electric Vehicle Workshop", image: EV, fee: "₹ 150" },
     { name: "Cybersecurity Workshop", image: Cyber, fee: "₹ 50" },
   ];
 

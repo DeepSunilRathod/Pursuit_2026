@@ -1,0 +1,39 @@
+/* Suggestions Area */
+.chatbot-suggestions {
+    padding: 10px 15px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(180, 180, 255, 0.1);
+}
+
+.chatbot-suggestions::-webkit-scrollbar {
+    height: 4px;
+}
+
+.chatbot-suggestions::-webkit-scrollbar-thumb {
+    background: rgba(95, 110, 255, 0.3);
+    border-radius: 2px;
+}
+
+.suggestion-chip {
+    background: rgba(46, 79, 179, 0.2);
+    border: 1px solid rgba(180, 180, 255, 0.3);
+    border-radius: 15px;
+    padding: 6px 12px;
+    color: #c5c9ff;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.suggestion-chip:hover {
+    background: rgba(46, 79, 179, 0.5);
+    border-color: #b4b0ff;
+    color: #fff;
+    transform: translateY(-1px);
+}

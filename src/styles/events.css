@@ -53,9 +53,11 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* Subtle scale on hover */
 .event-card:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 26px rgba(140, 160, 255, 0.6);
+  transform: scale(1.02);
+  /* slightly bigger */
+  box-shadow: none;
 }
 
 .event-poster {
@@ -110,8 +112,9 @@
 }
 
 .workshops-grid .event-card:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 26px rgba(140, 160, 255, 0.6);
+  transform: scale(1.02);
+  /* slightly bigger */
+  box-shadow: none;
 }
 
 .workshops-grid .event-poster {
@@ -127,8 +130,8 @@
 }
 
 .workshops-grid .event-card:hover .event-poster {
-  transform: scale(1.1);
-  /* Zoom effect inside card */
+  transform: none;
+  /* Zoom effect removed */
   box-shadow: none;
 }
 

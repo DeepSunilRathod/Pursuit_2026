@@ -17,6 +17,8 @@ import Register from "./Pages/Register";
 import About from "./Pages/About";
 import CoreTeam from "./Pages/CoreTeam";
 
+import ChatBot from "./Components/ChatBot";
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -30,6 +32,7 @@ function App() {
         <Loader onComplete={() => setLoading(false)} />
       ) : (
         <BrowserRouter>
+          <ChatBot />
           <Routes>
             {/* Pages WITH Navbar, Sidebar, Footer */}
             <Route element={<MainLayout />}>

@@ -12,6 +12,7 @@ import bgVideo from "../assets/bgpursuit.webm";
 import Qr100 from "../assets/qr/100.jpeg";
 import Qr49 from "../assets/qr/49.png";
 import Qr50 from "../assets/qr/50.jpeg";
+import Qr150 from "../assets/qr/150.jpeg";
 const placeholderQr = null;
 // ---------------------
 
@@ -71,6 +72,11 @@ const Register = () => {
       ...COMMON_FORM_CONFIG,
       fee: "₹ 50",
       qrCode: Qr50, // Updated
+    },
+    "Electric Vehicle Workshop": {
+      ...COMMON_FORM_CONFIG,
+      fee: "₹ 150",
+      qrCode: Qr150,
     },
     "Cloud Byte": {
       ...COMMON_FORM_CONFIG,
@@ -353,6 +359,7 @@ const Register = () => {
                   <option value="AI/ML Bootcamp">AI/ML Bootcamp</option>
                   <option value="Introduction to VLSI and Its Applications">Introduction to VLSI and Its Applications</option>
                   <option value="Introduction to Agentic Ai">Introduction to Agentic Ai</option>
+                  <option value="Electric Vehicle Workshop">Electric Vehicle Workshop</option>
                   <option value="Cybersecurity Workshop">Cybersecurity Workshop</option>
                   <option value="Cloud Byte">Cloud Byte</option>
                 </select>
