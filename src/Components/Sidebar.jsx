@@ -1,8 +1,10 @@
 import {
   FaHome,
+
   FaInfoCircle,
   FaUserFriends,
   FaImages,
+  FaCalendarAlt,
 
   FaUsers,
 } from "react-icons/fa";
@@ -23,6 +25,10 @@ const Sidebar = () => {
       </NavLink>
       <NavLink to="/gallery">
         <SidebarItem icon={<FaImages />} label="Gallery" />
+      </NavLink>
+
+      <NavLink to="/schedule">
+        <SidebarItem icon={<FaCalendarAlt />} label="Schedule" />
       </NavLink>
 
       <NavLink to="/coreteam">

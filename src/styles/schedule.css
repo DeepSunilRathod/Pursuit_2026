@@ -1,0 +1,307 @@
+/* Video Background */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.schedule-container {
+    padding: 120px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark overlay on top of video */
+.schedule-container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 6, 15, 0.7);
+    z-index: -1;
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.schedule-title {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #6030e4, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(96, 48, 228, 0.5);
+}
+
+.schedule-subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+}
+
+.day-schedule {
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(96, 48, 228, 0.5);
+    padding-bottom: 10px;
+}
+
+.day-title {
+    font-size: 1.8rem;
+    color: #3b82f6;
+}
+
+.day-date {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Table Styles */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-table th {
+    background: rgba(96, 48, 228, 0.2);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.schedule-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Track Colors */
+.track-cell {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.track-a {
+    color: #a0c4ff;
+}
+
+.track-b {
+    color: #c4a0ff;
+}
+
+.workshop-name {
+    font-weight: 700;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.workshop-time {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.summary-section {
+    margin-top: 60px;
+    padding: 30px;
+    background: rgba(5, 6, 15, 0.8);
+    border: 1px solid #3b82f6;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.summary-title {
+    color: #3b82f6;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    text-align: left;
+}
+
+.summary-item {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-status {
+    color: #00ff88;
+    font-size: 0.9rem;
+}
+
+/* Default Visibility */
+.desktop-view {
+    display: table;
+    width: 100%;
+}
+
+.mobile-view {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .schedule-container {
+        padding: 100px 15px 40px;
+    }
+
+    .schedule-title {
+        font-size: 1.8rem;
+    }
+
+    .day-title {
+        font-size: 1.5rem;
+    }
+
+    .day-date {
+        font-size: 0.9rem;
+    }
+
+    /* Hide Desktop Table */
+    .desktop-view {
+        display: none;
+    }
+
+    /* Show Mobile List */
+    .mobile-view {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .schedule-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .time-slot {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        background: rgba(96, 48, 228, 0.2);
+        border-radius: 6px;
+        padding: 8px;
+    }
+
+    .track-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .track-item {
+        padding: 10px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .track-a {
+        border-left: 4px solid #a0c4ff;
+    }
+
+    .track-b {
+        border-left: 4px solid #c4a0ff;
+    }
+
+    .track-label {
+        display: block;
+        font-size: 0.8rem;
+        color: #a0a0a0;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .workshop-name {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 2px;
+    }
+
+    .workshop-time {
+        font-size: 0.85rem;
+        color: #ccc;
+        font-style: italic;
+    }
+
+    .day-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-title {
+        font-size: 1.5rem;
+    }
+
+    .schedule-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 10px 5px;
+        font-size: 0.8rem;
+    }
+}

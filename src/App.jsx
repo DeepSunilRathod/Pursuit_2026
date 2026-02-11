@@ -16,6 +16,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import About from "./Pages/About";
 import CoreTeam from "./Pages/CoreTeam";
+import Schedule from "./Pages/Schedule";
 
 import ChatBot from "./Components/ChatBot";
 
@@ -42,6 +43,7 @@ function App() {
               <Route path="/accomodation" element={<Accomodation />} />
 
               <Route path="/workshops" element={<Workshops />} />
+              <Route path="/schedule" element={<Schedule />} />
               <Route path="/speakers" element={<Speakers />} />
 
               <Route path="/contact" element={<ContactUs />} />
