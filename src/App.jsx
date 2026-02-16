@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import MainLayout from "./Layout/MainLayout";
+import bgVideo from "./assets/bgpursuit.webm";
 import Loader from "./Components/Loader";
 
 import Home from "./Pages/Home";
@@ -33,6 +34,17 @@ function App() {
         <Loader onComplete={() => setLoading(false)} />
       ) : (
         <BrowserRouter>
+          <div className="fixed-video-container">
+            <video
+              className="fixed-video"
+              src={bgVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className="fixed-video-overlay" />
+          </div>
           <ChatBot />
           <Routes>
             {/* Pages WITH Navbar, Sidebar, Footer */}

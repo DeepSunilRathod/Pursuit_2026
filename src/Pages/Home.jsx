@@ -1,20 +1,12 @@
 import "../styles/hero.css";
 import PursuitName from "../assets/PursuitName.png";
-import bgVideo from "../assets/bgpursuit.webm";
 import Blackhole from "../assets/Blackhole.png";
 
 const Home = () => {
   return (
     <section className="hero">
       {/* Background Video */}
-      <video
-        className="hero-video"
-        src={bgVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {/* Background Video Removed (Global in App.jsx) */}
 
       {/* Center Content */}
       <div className="hero-center">

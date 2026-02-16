@@ -10,6 +10,32 @@ body {
   color: #ffffff;
 }
 
+.fixed-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.fixed-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fixed-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  /* Match the overlay opacity from Home */
+}
+
 a {
   text-decoration: none;
   color: inherit;
