@@ -1,0 +1,144 @@
+.accommodation-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.accommodation-card {
+  width: 300px;
+  min-height: 190px;
+  padding: 22px 18px;
+  text-align: center;
+
+  background: linear-gradient(180deg,
+      rgba(46, 60, 150, 0.75),
+      rgba(30, 20, 80, 0.85));
+
+  border: 1.5px solid rgba(140, 130, 255, 0.6);
+  clip-path: polygon(6% 0%, 94% 0%, 100% 20%, 94% 100%, 6% 100%, 0% 20%);
+
+  box-shadow: 0 0 18px rgba(120, 130, 255, 0.35),
+    inset 0 0 12px rgba(255, 255, 255, 0.06);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accommodation-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 22px 14px 40px rgba(255, 255, 255, 0.45),
+    22px 22px 22px rgba(140, 130, 255, 0.45);
+}
+
+.accommodation-card h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.accommodation-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  color: #e6e8ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accommodation-card {
+    width: 260px;
+  }
+}
+
+/* Rocket container */
+.accommodation-rocket {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Rocket image */
+.accommodation-rocket img {
+  width: 180px;
+  opacity: 0.9;
+
+  animation: rocketFloat 6s ease-in-out infinite;
+}
+
+/* 🚀 Floating / moving animation */
+@keyframes rocketFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-12px) translateX(8px);
+  }
+
+  50% {
+    transform: translateY(-20px) translateX(0);
+  }
+
+  75% {
+    transform: translateY(-12px) translateX(-8px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* 🚀 Launch Animation class */
+.rocket-launch img {
+  animation: rocketBlastOff 1s ease-in forwards !important;
+}
+
+@keyframes rocketBlastOff {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(20px) scale(0.9);
+    /* Anticipation */
+  }
+
+  100% {
+    transform: translateY(-2000px) scale(0.5);
+    /* Blast off! */
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accommodation-card {
+    width: 260px;
+  }
+
+  .accommodation-rocket img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .accommodation-cards {
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .accommodation-card {
+    width: 100%;
+    /* Full width cards on mobile */
+    max-width: 300px;
+  }
+}
