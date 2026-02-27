@@ -18,6 +18,7 @@ import Register from "./Pages/Register";
 import About from "./Pages/About";
 import CoreTeam from "./Pages/CoreTeam";
 import Schedule from "./Pages/Schedule";
+import Admin from "./Pages/Admin";
 
 import ChatBot from "./Components/ChatBot";
 
@@ -65,6 +66,7 @@ function App() {
             {/* Pages WITHOUT Navbar / Sidebar / Footer */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
       )}

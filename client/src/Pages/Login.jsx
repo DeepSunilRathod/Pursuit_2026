@@ -2,12 +2,21 @@ import { FaGoogle, FaArrowLeft } from "react-icons/fa6";
 // import "../styles/gallery.css";
 import "../styles/auth.css";
 import bgVideo from "../assets/bgpursuit.webm";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Logged in (demo)");
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (email === "admin@pursuit.com" && password === "admin123") {
+      navigate("/admin");
+    } else {
+      alert("Invalid credentials. Try admin@pursuit.com / admin123");
+    }
   };
 
   const handleGoogle = () => {
