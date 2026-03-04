@@ -29,6 +29,9 @@ import PiyushPoteImage from "../assets/coreteam/PiyushPote.webp";
 import VikasGawadeImage from "../assets/coreteam/Vikas Gawade.webp";
 import RutujaDalalImage from "../assets/coreteam/Rutuja Dalal.webp";
 import ShraddhaKapleImage from "../assets/coreteam/Shraddha kaple.webp";
+import ChakradharMahaleImage from "../assets/coreteam/chakradhar-Kp1Pehbi.png";
+import HanzalaKhanImage from "../assets/coreteam/hanzala_khan-D_KHHGaG.png";
+
 
 
 const mentors = [
@@ -131,7 +134,14 @@ const coreHeads = [
     {
         name: "Chakradhar Mahale",
         role: "Treasurer",
-        image: HeadPlaceholder,
+        image: ChakradharMahaleImage,
+        instagram: "https://www.instagram.com/",
+        linkedin: "https://www.linkedin.com/",
+    },
+    {
+        name: "Hanzala Khan",
+        role: "Graphics Head",
+        image: HanzalaKhanImage,
         instagram: "https://www.instagram.com/",
         linkedin: "https://www.linkedin.com/",
     },
@@ -226,13 +236,7 @@ const coreHeads = [
         instagram: "https://www.instagram.com/",
         linkedin: "https://www.linkedin.com/",
     },
-    {
-        name: "Hanzala Khan",
-        role: "Graphics Head",
-        image: HeadPlaceholder,
-        instagram: "https://www.instagram.com/",
-        linkedin: "https://www.linkedin.com/",
-    },
+
     {
         name: "Mohita Nimje",
         role: "Graphics Head",
