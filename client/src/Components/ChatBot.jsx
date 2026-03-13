@@ -53,7 +53,7 @@ const ChatBot = () => {
             return "Cloud Byte is perfect for understanding modern infrastructure. Fee: ₹49.";
         }
         if (lowerInput.includes("vlsi")) {
-            return "Introduction to VLSI and Its Applications is available for ₹100. A must for electronics enthusiasts.";
+            return "Introduction to VLSI and Its Applications is available for ₹60. A must for electronics enthusiasts.";
         }
         if (lowerInput.includes("latex")) {
             return "Mastering LaTeX is a FREE workshop! Learn to type smart, not hard, for your research papers and reports.";
@@ -72,7 +72,7 @@ const ChatBot = () => {
 
         // Fees
         if (lowerInput.includes("fee") || lowerInput.includes("cost") || lowerInput.includes("price") || lowerInput.includes("money") || lowerInput.includes("charge")) {
-            return "Fees are affordable!\n- LaTeX: Free\n- Cloud Byte: ₹49\n- Cybersecurity: ₹50\n- AI/ML, VLSI, Agentic AI: ₹100\n- EV Workshop: ₹150";
+            return "Fees are affordable!\n- LaTeX: Free\n- Cloud Byte: ₹49\n- Cybersecurity: ₹50\n- VLSI: ₹60\n- AI/ML, Agentic AI: ₹100\n- EV Workshop: ₹150";
         }
 
         // Dates & Schedule

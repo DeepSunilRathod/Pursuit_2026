@@ -11,6 +11,7 @@ import bgVideo from "../assets/bgpursuit.webm";
 // --- ASSET IMPORTS ---
 import Qr100 from "../assets/qr/qr100.jpeg";
 import Qr50 from "../assets/qr/qr50.jpeg";
+import Qr60 from "../assets/qr/qr60.jpeg";
 import Qr150 from "../assets/qr/qr150.jpeg";
 const placeholderQr = null;
 // ---------------------
@@ -59,8 +60,8 @@ const Register = () => {
     },
     "Introduction to VLSI and Its Applications": {
       ...COMMON_FORM_CONFIG,
-      fee: "₹ 100",
-      qrCode: Qr100, // Updated
+      fee: "₹ 60",
+      qrCode: Qr60, // Updated
     },
     "Introduction to Agentic Ai": {
       ...COMMON_FORM_CONFIG,

@@ -44,7 +44,7 @@ const workshopData = {
         time: "09:00 AM - 03:00 PM",
         date: "Saturday, March 28",
         schedule: "Full day event including theoretical concepts, Cadence Lab hands-on, and 1 Hr Lunch.",
-        fee: "₹ 100",
+        fee: "₹ 60",
         resourcePerson: "Pranav Kheldar",
         coordinator: "Pranav Jadhav (CP), Pranjal Patil (WCP) | Contact: +91 73509 74162",
         color: "#60a5fa"
