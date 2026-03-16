@@ -14,6 +14,7 @@ import VLSI from "../assets/Events/VLSI.png";
 import EV from "../assets/Events/EV.png";
 import Web from "../assets/Events/web.png";
 import Autodesk from "../assets/Events/AUTODESK.png";
+import IEEE from "../assets/Events/IEEE.png";
 import TechBackground from "../assets/Technical events background (1).png";
 
 const Workshops = () => {
@@ -33,7 +34,8 @@ const Workshops = () => {
     { id: "electric-vehicle", name: "Electric Vehicle Workshop", image: EV, fee: "₹ 150" },
     { id: "cybersecurity", name: "Cybersecurity Workshop", image: Cyber, fee: "₹ 50" },
     { id: "web-development", name: "Web Development Workshop", image: Web, fee: "₹ 100" },
-    { id: "autodesk", name: "Autodesk Workshop", image: Autodesk, fee: "₹ 100" }
+    { id: "autodesk", name: "Autodesk Workshop", image: Autodesk, fee: "₹ 100" },
+    { id: "esp32-raspberry-pi", name: "Prototype to Product: ESP32 & Raspberry Pi", image: IEEE, fee: "₹ 250" }
   ];
 
   const handleWorkshopClick = (workshopId) => {

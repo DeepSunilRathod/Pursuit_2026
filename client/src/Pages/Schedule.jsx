@@ -40,6 +40,7 @@ const scheduleData = [
             { time: "09:00 AM - 03:00 PM", title: "Introduction to VLSI (ESSA)", venue: "Cadence Lab", details: "1 hr lunch" },
             { time: "09:00 AM - 01:00 PM", title: "Web Development (E-CELL)", venue: "AI-ML Lab", details: "Day 2 • 1 hr break" },
             { time: "10:00 AM - 03:00 PM", title: "Introduction to Agentic AI (ACM)", venue: "Web Tech Lab", details: "1 hr lunch" },
+            { time: "10:00 AM - 04:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "TBD", details: "1 hr lunch" },
             { time: "02:00 PM - 06:00 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 4 • 30 min break" },
             { time: "03:00 PM - 06:30 PM", title: "Mastering LaTeX (ISTE)", venue: "Swadhyay Kaksha", details: "Day 2 • 30 min break" }
         ]

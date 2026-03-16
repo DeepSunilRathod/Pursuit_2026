@@ -30,7 +30,7 @@ mongoose
 // POST: Register a user
 app.post("/api/register", async (req, res) => {
     try {
-        const { name, email, phone, branch, year, college, type, workshop, utr, fee } = req.body;
+        const { name, email, phone, branch, year, college, type, workshop, utr, fee, teamMembers } = req.body;
 
         // Validate
         if (!name || !email || !phone || !branch || !year || !college || !workshop) {
@@ -61,7 +61,8 @@ app.post("/api/register", async (req, res) => {
             type,
             workshop,
             utr,
-            fee
+            fee,
+            teamMembers
         });
 
         await newRegistration.save();

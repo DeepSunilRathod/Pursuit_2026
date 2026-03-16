@@ -13,6 +13,7 @@ import Qr100 from "../assets/qr/qr100.jpeg";
 import Qr50 from "../assets/qr/qr50.jpeg";
 import Qr60 from "../assets/qr/qr60.jpeg";
 import Qr150 from "../assets/qr/qr150.jpeg";
+import Qr250 from "../assets/qr/qr250.jpeg";
 const placeholderQr = null;
 // ---------------------
 
@@ -93,6 +94,12 @@ const Register = () => {
       fee: "₹ 100", // Placeholder if not provided
       qrCode: Qr100,
     },
+    "Prototype to Product: ESP32 & Raspberry Pi": {
+      ...COMMON_FORM_CONFIG,
+      fee: "₹ 250",
+      qrCode: Qr250,
+      allowTeam: true,
+    },
     // Fallback/Default if needed
     "DEFAULT": {
       actionUrl: "",
@@ -112,7 +119,12 @@ const Register = () => {
     college: "",
     type: "Workshop",
     workshop: selectedWorkshop,
-    utr: ""
+    utr: "",
+    teamMembers: [
+      { name: "", email: "", phone: "" },
+      { name: "", email: "", phone: "" },
+      { name: "", email: "", phone: "" }
+    ]
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -126,7 +138,11 @@ const Register = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-
+  const handleTeamMemberChange = (index, field, value) => {
+    const updatedTeam = [...formData.teamMembers];
+    updatedTeam[index][field] = value;
+    setFormData((prev) => ({ ...prev, teamMembers: updatedTeam }));
+  };
 
   // --- EMAIL JS CONFIGURATION ---
   // Credentials provided by user
@@ -190,7 +206,8 @@ const Register = () => {
       type: formData.type,
       workshop: formData.workshop,
       utr: isPaymentRequired(currentFee) ? formData.utr : "0",
-      fee: currentFee
+      fee: currentFee,
+      teamMembers: config.allowTeam ? formData.teamMembers.filter(m => m.name.trim() !== "") : []
     };
 
     console.log("Submitting to MongoDB backend:", backendApiUrl);
@@ -357,9 +374,59 @@ const Register = () => {
                   <option value="Cloud Byte">Cloud Byte</option>
                   <option value="Web Development Workshop">Web Development Workshop</option>
                   <option value="Autodesk Workshop">Autodesk Workshop</option>
+                  <option value="Prototype to Product: ESP32 & Raspberry Pi">Prototype to Product: ESP32 & Raspberry Pi</option>
                 </select>
               </div>
             </div>
+
+            {/* TEAM REGISTRATION - Conditionally Rendered */}
+            {currentConfig.allowTeam && (
+              <>
+                <div className="auth-section-title">Team Members (Optional)</div>
+                <p className="auth-subtext" style={{ fontSize: '12px', textAlign: 'center', marginBottom: '15px', marginTop: '-15px' }}>
+                  A team can have up to 4 members. You are the Team Leader (Member 1). Add up to 3 more members below.
+                </p>
+                {formData.teamMembers.map((member, index) => (
+                  <div key={index} style={{ marginBottom: "20px", padding: "15px", background: "rgba(255,255,255,0.02)", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.1)" }}>
+                    <div style={{ color: "#c5c9ff", marginBottom: "10px", fontWeight: "bold" }}>Member {index + 2}</div>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label className="auth-label">Name</label>
+                        <input
+                          type="text"
+                          className="auth-input"
+                          placeholder={`Member ${index + 2} Name`}
+                          value={member.name}
+                          onChange={(e) => handleTeamMemberChange(index, "name", e.target.value)}
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label className="auth-label">Email</label>
+                        <input
+                          type="email"
+                          className="auth-input"
+                          placeholder={`Member ${index + 2} Email`}
+                          value={member.email}
+                          onChange={(e) => handleTeamMemberChange(index, "email", e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group" style={{ gridColumn: '1 / -1' }}>
+                        <label className="auth-label">Phone</label>
+                        <input
+                          type="tel"
+                          className="auth-input"
+                          placeholder={`Member ${index + 2} Phone`}
+                          value={member.phone}
+                          onChange={(e) => handleTeamMemberChange(index, "phone", e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </>
+            )}
 
             {/* PAYMENT - Conditionally Rendered */}
             {isPaymentRequired(currentFee) && (

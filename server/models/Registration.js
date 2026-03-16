@@ -11,6 +11,13 @@ const RegistrationSchema = new mongoose.Schema({
     workshop: { type: String, required: true },
     utr: { type: String },
     fee: { type: String },
+    teamMembers: [
+        {
+            name: { type: String },
+            email: { type: String },
+            phone: { type: String }
+        }
+    ],
     createdAt: { type: Date, default: Date.now }
 });
 

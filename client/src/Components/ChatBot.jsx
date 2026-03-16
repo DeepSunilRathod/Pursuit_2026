@@ -42,7 +42,7 @@ const ChatBot = () => {
 
         // Workshops General
         if (lowerInput.includes("workshop") || lowerInput.includes("events")) {
-            return "We have exciting workshops:\n1. AI/ML Bootcamp\n2. Cloud Byte\n3. VLSI & Applications\n4. Mastering LaTeX\n5. Agentic AI\n6. Cybersecurity\n7. Electric Vehicle Workshop\n\nAsk me about a specific one (e.g., 'Tell me about AI')!";
+            return "We have exciting workshops:\n1. AI/ML Bootcamp\n2. Cloud Byte\n3. VLSI & Applications\n4. Mastering LaTeX\n5. Agentic AI\n6. Cybersecurity\n7. Electric Vehicle Workshop\n8. Prototype to Product: ESP32 & Raspberry Pi\n\nAsk me about a specific one (e.g., 'Tell me about AI')!";
         }
 
         // Specific Workshop Details
@@ -64,6 +64,9 @@ const ChatBot = () => {
         if (lowerInput.includes("electric") || lowerInput.includes("ev") || lowerInput.includes("vehicle")) {
             return "Electric Vehicle Workshop is our latest addition! Fee: ₹150. Explore the future of mobility.";
         }
+        if (lowerInput.includes("esp32") || lowerInput.includes("raspberry") || lowerInput.includes("prototype") || lowerInput.includes("iot")) {
+            return "Prototype to Product: ESP32 & Raspberry Pi is available for ₹250 (Per Team - up to 4 members). Build real-world IoT prototypes.";
+        }
 
         // Registration
         if (lowerInput.includes("register") || lowerInput.includes("registration") || lowerInput.includes("sign up") || lowerInput.includes("join")) {
@@ -72,7 +75,7 @@ const ChatBot = () => {
 
         // Fees
         if (lowerInput.includes("fee") || lowerInput.includes("cost") || lowerInput.includes("price") || lowerInput.includes("money") || lowerInput.includes("charge")) {
-            return "Fees are affordable!\n- LaTeX: Free\n- Cloud Byte: ₹49\n- Cybersecurity: ₹50\n- VLSI: ₹60\n- AI/ML, Agentic AI: ₹100\n- EV Workshop: ₹150";
+            return "Fees are affordable!\n- LaTeX: Free\n- Cloud Byte: ₹49\n- Cybersecurity: ₹50\n- VLSI: ₹60\n- AI/ML, Agentic AI: ₹100\n- EV Workshop: ₹150\n- ESP32 (Team): ₹250";
         }
 
         // Dates & Schedule

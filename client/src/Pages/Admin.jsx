@@ -94,6 +94,7 @@ const Admin = () => {
                                             <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Phone</th>
                                             <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>College</th>
                                             <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Workshop</th>
+                                            <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Team Members</th>
                                             <th style={{ padding: '12px', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>UTR/Status</th>
                                         </tr>
                                     </thead>
@@ -106,6 +107,17 @@ const Admin = () => {
                                                     <td style={{ padding: '12px' }}>{reg.phone}</td>
                                                     <td style={{ padding: '12px' }}>{reg.college} ({reg.year})</td>
                                                     <td style={{ padding: '12px' }}>{reg.workshop}</td>
+                                                    <td style={{ padding: '12px', fontSize: '12px', maxWidth: '200px' }}>
+                                                        {reg.teamMembers && reg.teamMembers.length > 0 ? (
+                                                            <ul style={{ paddingLeft: '15px', margin: 0 }}>
+                                                                {reg.teamMembers.map((m, i) => (
+                                                                    <li key={i}>{m.name || "N/A"}</li>
+                                                                ))}
+                                                            </ul>
+                                                        ) : (
+                                                            <span style={{ color: "rgba(255,255,255,0.5)" }}>Solo</span>
+                                                        )}
+                                                    </td>
                                                     <td style={{ padding: '12px' }}>
                                                         {reg.utr === "0" || !reg.utr ? <span style={{ color: '#00ff88' }}>Free</span> : <span style={{ color: '#ffd700' }}>{reg.utr}</span>}
                                                     </td>
