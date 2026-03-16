@@ -65,7 +65,7 @@ const ChatBot = () => {
             return "Electric Vehicle Workshop is our latest addition! Fee: ₹150. Explore the future of mobility.";
         }
         if (lowerInput.includes("esp32") || lowerInput.includes("raspberry") || lowerInput.includes("prototype") || lowerInput.includes("iot")) {
-            return "Prototype to Product: ESP32 & Raspberry Pi is available for ₹50 for Individuals or ₹250 for a Team (up to 4 members). Build real-world IoT prototypes.";
+            return "Prototype to Product: ESP32 & Raspberry Pi is available for ₹50 for Individuals or ₹250 for a Team (up to 5 members). Build real-world IoT prototypes.";
         }
 
         // Registration
