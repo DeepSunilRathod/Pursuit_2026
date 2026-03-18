@@ -9,22 +9,24 @@ const workshopData = {
         name: "Cloud Byte",
         overview: "Explore the fascinating world of Cloud Computing and open-source contributions. Learn to build, deploy, and manage scalable cloud applications.",
         time: "09:00 AM - 02:00 PM",
-        date: "Friday, March 27",
-        schedule: "Registration starts at 8:30 AM, followed by basics of Cloud Setup, Lunch Break (1 hr), and Hands-on Cloud Deployments.",
+        date: "March 25",
+        venue: "Web Tech Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 49",
         resourcePerson: "Mr. Amit Molke",
-        coordinator: "Ashish Ingle (CP), Divya Sangle (VCP) | Contact: +91 72185 22510",
+        coordinator: "Ashish Ingle (Chairperson)",
         color: "#00f0ff"
     },
     "mastering-latex": {
         name: "Mastering LaTeX: Type Smart, Not Hard",
         overview: "Master LaTeX for professional document preparation. A must-attend workshop for writing research papers, reports, and beautiful technical documentation.",
-        time: "03:30 PM - 07:00 PM",
-        date: "Friday, March 27 & Saturday, March 28",
-        schedule: "Day 1 (3:30 PM - 7:00 PM) - Basics of LaTeX, Day 2 (3:00 PM - 6:30 PM) - Advanced Typesetting.",
+        time: "12:00 PM - 04:30 PM",
+        date: "March 25",
+        venue: "AI-ML Lab",
+        schedule: "30 min break",
         fee: "Free",
-        resourcePerson: "Dr.R.S.Mahamune",
-        coordinator: "Shrushti Deshmukh (CP), Vansh Jaiswal (VCP) | Contact: +91 74992 96763",
+        resourcePerson: "Dr. R.S. Mahamune",
+        coordinator: "Shrushti Deshmukh (Chairperson)",
         color: "#ff00e5",
         isFull: true
     },
@@ -32,88 +34,96 @@ const workshopData = {
         name: "AI/ML Bootcamp",
         overview: "Kickstart your AI and ML journey. In this extended intensive bootcamp, build neural networks, train image classifiers, and learn modern ML frameworks.",
         time: "09:00 AM - 01:00 PM",
-        date: "March 25, 26, 27",
-        schedule: "3 Days Workshop - Morning Sessions covering Data Processing, Deep Learning & Deployment.",
+        date: "March 27 to 28",
+        venue: "DBMS Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 100",
-        resourcePerson: "Dr.Roshan Karwa",
-        coordinator: "Yash Mali (CP), Sakshi Deshmukh (VCP) | Contact: +91 88306 51820",
+        resourcePerson: "Mr. Yogesh P. Murumkar",
+        coordinator: "Yash Mali (Chairperson)",
         color: "#a78bfa"
     },
     "vlsi-applications": {
         name: "Introduction to VLSI and Its Applications",
         overview: "Dive into the world of VLSI design. Learn the fundamentals of digital circuits, chip manufacturing processes, and HDL programming.",
         time: "09:00 AM - 03:00 PM",
-        date: "Saturday, March 28",
-        schedule: "Full day event including theoretical concepts, Cadence Lab hands-on, and 1 Hr Lunch.",
+        date: "March 28",
+        venue: "Cadence Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 60",
-        resourcePerson: "Pranav Kheldar",
-        coordinator: "Pranav Jadhav (CP), Pranjal Patil (WCP) | Contact: +91 73509 74162",
+        resourcePerson: "Mr. Pranav Kheldar",
+        coordinator: "Pranav Jadhav (Chairperson)",
         color: "#60a5fa"
     },
     "agentic-ai": {
         name: "Introduction to Agentic Ai",
         overview: "Design and deploy autonomous AI agents capable of executing complex instructions and problem-solving without human intervention.",
         time: "10:00 AM - 03:00 PM",
-        date: "Saturday, March 28",
-        schedule: "Session starts at 10 AM, covering LLMs, Agent Architectures using Langchain, and live bot deployments.",
+        date: "March 28",
+        venue: "Web Tech Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 100",
-        resourcePerson: "Nakul Deshmukh",
-        coordinator: "Satyam Mishra (CP), Deep Rathod (WCP) | Contact: +91 91129 58683",
+        resourcePerson: "Mr. Nakul Deshmukh",
+        coordinator: "Satyam Mishra (Chairperson)",
         color: "#22c55e"
     },
     "electric-vehicle": {
         name: "Electric Vehicle Workshop",
         overview: "Understand the core engineering of Electric Vehicles. Explore battery management systems, EV drivetrains, and modern mobility solutions.",
         time: "09:00 AM - 03:00 PM",
-        date: "Friday, March 27 & Saturday, March 28",
-        schedule: "2 Days Session (09:00 AM - 03:00 PM on Day 1, 08:00 AM - 02:00 PM on Day 2).",
+        date: "March 27 to 28",
+        venue: "Swadhyay Kaksha",
+        schedule: "1 hr lunch",
         fee: "₹ 150",
-        resourcePerson: "Chetan Tajane",
-        coordinator: "Tejas Pande, Dipali Purane | Contact: +91 74981 30919",
+        resourcePerson: "Mr. Chetan Tajane",
+        coordinator: "Tejas Pande (Chairperson)",
         color: "#f59e0b"
     },
     "cybersecurity": {
         name: "Cybersecurity Workshop",
         overview: "Protect, detect, and exploit. Learn practical ethical hacking, network defense methodologies, and vulnerability assessments.",
-        time: "02:30 PM - 07:00 PM",
-        date: "Friday, March 27",
-        schedule: "Session runs through the afternoon, spanning network basics to advanced penetrations with a 30m break.",
+        time: "09:00 AM - 02:00 PM",
+        date: "March 27",
+        venue: "Web Tech Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 50",
-        resourcePerson: "Riya Dangra",
-        coordinator: "Sanchit Dangra (CP), Sakshi Rajankar (WCP) | Contact: +91 93093 91688",
+        resourcePerson: "Miss Riya Dangra",
+        coordinator: "Sanchit Dangra (Chairperson)",
         color: "#ef4444"
     },
     "web-development": {
         name: "Web Development Workshop",
         overview: "A comprehensive course on modern Web Development. Learn how to architect, develop, and deploy a responsive high-end web application.",
-        time: "02:30 PM - 07:00 PM",
-        date: "Friday, March 27 & Saturday, March 28",
-        schedule: "Day 1 (2:30 PM - 7:00 PM) Frontend Basics, Day 2 (09:00 AM - 01:00 PM) Backend integration.",
+        time: "01:30 PM - 06:00 PM",
+        date: "March 27 to 28",
+        venue: "AI-ML Lab",
+        schedule: "30 min break",
         fee: "₹ 100",
-        resourcePerson: "DEVESH BADGUJAR",
-        coordinator: "Rutuja Deshmukh, Nihal Kankal | Contact: +91 87678 19508",
+        resourcePerson: "Mr. Devesh Badgujar",
+        coordinator: "Rutuja Deshmukh (Chairperson)",
         color: "#3b82f6"
     },
     "autodesk": {
         name: "Autodesk Workshop",
         overview: "Shape the physical world. Gain heavy hands-on experience using Autodesk Revit for architectural and mechanical engineering designs.",
-        time: "11:00 AM - 02:30 PM",
-        date: "March 25, 26 & 28",
-        schedule: "11:00 AM to 02:30 PM on Day 1 & 2. 02:00 PM to 06:00 PM on Day 4.",
+        time: "08:00 AM - 01:00 PM",
+        date: "March 27 to 28",
+        venue: "AI-ML Lab",
+        schedule: "1 hr lunch",
         fee: "₹ 100",
-        resourcePerson: "IEI_MECH Professionals",
-        coordinator: "Shrinit Chavan | Contact: +91 77749 00204",
+        resourcePerson: "Mr. Pratik Deshmukh",
+        coordinator: "Shrinit Chavan (Chairperson)",
         color: "#10b981"
     },
     "esp32-raspberry-pi": {
         name: "Prototype to Product: ESP32 & Raspberry Pi",
         overview: "Learn the fundamentals of IoT using ESP32 and Raspberry Pi. Build real-world prototypes and transition them into viable products. (Open for team registrations up to 5 members!)",
-        time: "10:00 AM - 04:00 PM",
-        date: "Saturday, March 28",
-        schedule: "Full day event including theoretical concepts, hardware hands-on, and prototyping.",
+        time: "09:00 AM - 02:00 PM",
+        date: "March 25 to 28",
+        venue: "Cadence Lab & Seminar Hall",
+        schedule: "1 hr lunch",
         fee: "₹ 50 (Solo) / ₹ 250 (Team)",
-        resourcePerson: "Dr. D. D. Nawgaje Sir",
-        coordinator: "Soham Bhole | Contact: +91 74982 53034",
+        resourcePerson: "IEEE Student Chapter",
+        coordinator: "Soham Bhole (Chairperson)",
         color: "#f59e0b"
     }
 };
@@ -174,10 +184,14 @@ const WorkshopDetail = () => {
                                     <span className="ws-detail-val">{workshop.time}</span>
                                 </div>
                                 <div className="ws-detail-item">
+                                    <span className="ws-detail-label">Venue:</span>
+                                    <span className="ws-detail-val">{workshop.venue}</span>
+                                </div>
+                                <div className="ws-detail-item">
                                     <span className="ws-detail-label">Fee:</span>
                                     <span className="ws-detail-val fee-highlight">{workshop.fee}</span>
                                 </div>
-                                <div className="ws-detail-item">
+                                <div className="ws-detail-item" style={{ gridColumn: "1 / -1" }}>
                                     <span className="ws-detail-label">Resource Person:</span>
                                     <span className="ws-detail-val">{workshop.resourcePerson}</span>
                                 </div>

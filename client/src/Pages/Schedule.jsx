@@ -7,42 +7,41 @@ const scheduleData = [
         day: "Day 1",
         date: "Wednesday, March 25",
         events: [
-            { time: "09:00 AM - 01:00 PM", title: "AL/ML Bootcamp (CSESA)", venue: "DBMS Lab", details: "Day 1 • 1 hr lunch" },
-            { time: "11:00 AM - 02:30 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 1 • 30 min break" }
+            { time: "09:00 AM - 02:00 PM", title: "Cloud Byte (Mozilla Open-Source)", venue: "Web Tech Lab", details: "1 hr lunch" },
+            { time: "09:00 AM - 02:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "Cadence Lab and Seminar Hall", details: "Day 1 • 1 hr lunch" },
+            { time: "12:00 PM - 04:30 PM", title: "Mastering LaTeX (ISTE)", venue: "AI-ML Lab", details: "30 min break" }
         ]
     },
     {
         day: "Day 2",
         date: "Thursday, March 26",
         events: [
-            { time: "09:00 AM - 01:00 PM", title: "AL/ML Bootcamp (CSESA)", venue: "DBMS Lab", details: "Day 2 • 1 hr lunch" },
-            { time: "11:00 AM - 02:30 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 2 • 30 min break" }
+            { time: "09:00 AM - 02:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "Cadence Lab and Seminar Hall", details: "Day 2 • 1 hr lunch" }
         ]
     },
     {
         day: "Day 3",
         date: "Friday, March 27",
         events: [
-            { time: "08:00 AM - 01:00 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 3 • 1 hr lunch" },
+            { time: "08:00 AM - 01:00 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 1 • 1 hr lunch" },
+            { time: "09:00 AM - 01:00 PM", title: "AI/ML Bootcamp (CSESA)", venue: "DBMS Lab", details: "Day 1 • 1 hr lunch" },
+            { time: "09:00 AM - 02:00 PM", title: "Cybersecurity Workshop (ITSA)", venue: "Web Tech Lab", details: "1 hr lunch" },
+            { time: "09:00 AM - 02:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "Cadence Lab and Seminar Hall", details: "Day 3 • 1 hr lunch" },
             { time: "09:00 AM - 03:00 PM", title: "Electric Vehicle (IEI_ELPO)", venue: "Swadhyay Kaksha", details: "Day 1 • 1 hr lunch" },
-            { time: "09:00 AM - 02:00 PM", title: "Cloud Byte (Mozilla Open-Source)", venue: "Web Tech Lab", details: "1 hr lunch" },
-            { time: "09:00 AM - 01:00 PM", title: "AL/ML Bootcamp (CSESA)", venue: "DBMS Lab", details: "Day 3 • 1 hr lunch" },
-            { time: "02:30 PM - 07:00 PM", title: "Cybersecurity Workshop (ITSA)", venue: "Web Tech Lab", details: "30 min break" },
-            { time: "02:30 PM - 07:00 PM", title: "Web Development (E-CELL)", venue: "AI-ML Lab", details: "Day 1 • 30 min break" },
-            { time: "03:30 PM - 07:00 PM", title: "Mastering LaTeX (ISTE)", venue: "Swadhyay Kaksha", details: "Day 1 • 30 min break" }
+            { time: "01:30 PM - 06:00 PM", title: "Web Development (E-CELL)", venue: "AI-ML Lab", details: "Day 1 • 30 min break" }
         ]
     },
     {
         day: "Day 4",
         date: "Saturday, March 28",
         events: [
-            { time: "08:00 AM - 02:00 PM", title: "Electric Vehicle (IEI_ELPO)", venue: "Swadhyay Kaksha", details: "Day 2 • 1 hr lunch" },
+            { time: "08:00 AM - 01:00 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 2 • 1 hr lunch" },
+            { time: "09:00 AM - 01:00 PM", title: "AI/ML Bootcamp (CSESA)", venue: "DBMS Lab", details: "Day 2 • 1 hr lunch" },
+            { time: "09:00 AM - 02:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "Cadence Lab and Seminar Hall", details: "Day 4 • 1 hr lunch" },
+            { time: "09:00 AM - 03:00 PM", title: "Electric Vehicle (IEI_ELPO)", venue: "Swadhyay Kaksha", details: "Day 2 • 1 hr lunch" },
             { time: "09:00 AM - 03:00 PM", title: "Introduction to VLSI (ESSA)", venue: "Cadence Lab", details: "1 hr lunch" },
-            { time: "09:00 AM - 01:00 PM", title: "Web Development (E-CELL)", venue: "AI-ML Lab", details: "Day 2 • 1 hr break" },
             { time: "10:00 AM - 03:00 PM", title: "Introduction to Agentic AI (ACM)", venue: "Web Tech Lab", details: "1 hr lunch" },
-            { time: "10:00 AM - 04:00 PM", title: "Prototype to Product: ESP32 & Raspberry Pi (IEEE)", venue: "TBD", details: "1 hr lunch" },
-            { time: "02:00 PM - 06:00 PM", title: "AUTODESK REVIT (IEI_MECH)", venue: "AI-ML Lab", details: "Day 4 • 30 min break" },
-            { time: "03:00 PM - 06:30 PM", title: "Mastering LaTeX (ISTE)", venue: "Swadhyay Kaksha", details: "Day 2 • 30 min break" }
+            { time: "01:30 PM - 06:00 PM", title: "Web Development (E-CELL)", venue: "AI-ML Lab", details: "Day 2 • 30 min break" }
         ]
     }
 ];
