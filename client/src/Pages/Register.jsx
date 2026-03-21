@@ -195,6 +195,11 @@ const Register = () => {
       return;
     }
 
+    if (formData.workshop === "Prototype to Product: ESP32 & Raspberry Pi") {
+      alert("Registration for ESP32 & Raspberry Pi is closed as entries are full.");
+      return;
+    }
+
     if (isSubmitting) return;
     setIsSubmitting(true);
 
@@ -389,7 +394,7 @@ const Register = () => {
                   <option value="Cloud Byte">Cloud Byte</option>
                   <option value="Web Development Workshop">Web Development Workshop</option>
                   <option value="Autodesk Workshop">Autodesk Workshop</option>
-                  <option value="Prototype to Product: ESP32 & Raspberry Pi">Prototype to Product: ESP32 & Raspberry Pi</option>
+                  <option value="Prototype to Product: ESP32 & Raspberry Pi" disabled>Prototype to Product: ESP32 & Raspberry Pi (Entry Full)</option>
                 </select>
               </div>
             </div>

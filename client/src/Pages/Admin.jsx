@@ -16,18 +16,20 @@ const Admin = () => {
 
     // Authentication states
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [passwordInput, setPasswordInput] = useState("");
+    const [passwordInput, setPasswordInput] = useState(sessionStorage.getItem("adminPwd") || "");
 
-    const handleLogin = async (e) => {
+    const handleLogin = async (e, savedPwd = null) => {
         if (e) e.preventDefault();
         setLoading(true);
         setError(null);
+        const pwdToUse = savedPwd || passwordInput;
+        
         try {
             const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
             
             // Fetch registrations
             const regRes = await fetch(`${baseUrl}/api/registrations`, {
-                headers: { "x-admin-password": passwordInput }
+                headers: { "x-admin-password": pwdToUse }
             });
             
             if (regRes.status === 401) {
@@ -38,7 +40,7 @@ const Admin = () => {
             
             // Fetch accommodations
             const accRes = await fetch(`${baseUrl}/api/accommodations`, {
-                headers: { "x-admin-password": passwordInput }
+                headers: { "x-admin-password": pwdToUse }
             });
             let accData = [];
             if (accRes.ok) {
@@ -50,13 +52,25 @@ const Admin = () => {
             setRegistrations(regData);
             setAccommodations(accData);
             setIsAuthenticated(true);
+            sessionStorage.setItem("adminPwd", pwdToUse);
+            sessionStorage.setItem("adminAuth", "true");
         } catch (err) {
             setError(err.message);
             setIsAuthenticated(false);
+            sessionStorage.removeItem("adminPwd");
+            sessionStorage.removeItem("adminAuth");
         } finally {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        const storedAuth = sessionStorage.getItem("adminAuth");
+        const storedPwd = sessionStorage.getItem("adminPwd");
+        if (storedAuth === "true" && storedPwd) {
+            handleLogin(null, storedPwd);
+        }
+    }, []);
 
 
     const workshopNames = [

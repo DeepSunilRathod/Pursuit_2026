@@ -121,10 +121,11 @@ const workshopData = {
         date: "March 25 to 28",
         venue: "Cadence Lab & Seminar Hall",
         schedule: "1 hr lunch",
-        fee: "₹ 50 (Solo) / ₹ 250 (Team)",
+        fee: "Entry Full",
         resourcePerson: "IEEE Student Chapter",
         coordinator: "Soham Bhole (Chairperson)",
-        color: "#f59e0b"
+        color: "#f59e0b",
+        isFull: true
     }
 };
 

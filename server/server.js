@@ -17,7 +17,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173", "http://localhost:5174"];
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors({ 
+    origin: allowedOrigins,
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-admin-password']
+}));
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true }));
 
